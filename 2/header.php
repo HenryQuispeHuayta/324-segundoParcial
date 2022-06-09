@@ -16,9 +16,8 @@
     </header>
     <nav>
         <ul>
-            <li><a href="http://localhost/324-primerParcial/index.php">Inicio</a></li>
-            <li><a href="http://localhost/324-primerParcial/1/informatica.php">Informatica</a></li>
-            <li><a href="http://localhost/324-primerParcial/1/fisica.php">Fisica</a></li>
-            <li><a href="http://localhost/324-primerParcial/1/matematicas.php">Matematicas</a></li>
+            <li><a href="index.php">Inicio</a></li>
+            <li><a href="inscripcion.php">Incripcion</a></li>
+            <li><a href="candidatos.php">Candidatos</a></li>
         </ul>
     </nav>
