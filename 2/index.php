@@ -1,9 +1,26 @@
+<?php
+include("conexion.php");
+$flujo=$_GET["flujo"];
+$proceso=$_GET["proceso"];
+$sql = "select * from FlujoProceso ";
+$sql.= "where Flujo='$flujo' and Proceso='$proceso'";
+$res=mysqli_query($con, $sql);
+$fila=mysqli_fetch_array($res);
+$procesoSig=$fila['ProcesoSiguiente'];
+$pantalla=$fila['Pantalla'];
+$pantalla.=".inc.php";
+?>
+
 <?php include('header.php') ?>
     <div class="body">
         <div class="seccion">
             <div class="separacion">
-                <h2>Misión FCPN</h2>
-                <p>La misión de la FCPN es generar conocimiento científico y tecnológico, y formar investigadores en ciencias puras y naturales altamente calificados con pensamiento crítico, iniciativa, innovadoras, emprendedoras y con responsabilidad social y ambiental; para construir una sociedad boliviana libre, justa, desarrollada, productiva, inclusiva y competitiva. (Segundo Congreso FCPN, 2016)</p>
+                <form>
+                    <input type="hidden" name="flujo" value="<?php echo $flujo ?>">
+                    <input type="hidden" name="proceso" value="<?php echo $procesoSig ?>">
+                    <input type="submit" name="Siguiente" value="Siguiente">
+                </form>
+                <?php include("pantallas/$pantalla")?>
             </div>
             <div class="separacion">
                 <h2>Visión FCPN</h2>
